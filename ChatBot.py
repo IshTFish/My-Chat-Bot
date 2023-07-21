@@ -36,5 +36,5 @@ def call_chatgpt(prompt: str) -> str:
 
 
 question = st.text_input('Enter a question here', 'Tell me a joke')
-response = call_chatgpt("tell me a joke")
+response = call_chatgpt(question)
 st.write(response)
