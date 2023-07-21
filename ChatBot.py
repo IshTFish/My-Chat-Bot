@@ -3,7 +3,7 @@ import openai
 
 st.write("Hello World -- from Ishaan")
 
-openai.api_key = st.secrets["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"_]
+openai.api_key = st.secrets["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"]
 
 def call_chatgpt(prompt: str) -> str:
     """
