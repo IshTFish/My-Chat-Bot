@@ -30,3 +30,5 @@ def call_chatgpt(prompt: str) -> str:
 
     # Return the generated AI response.
     return ans
+
+response = call_chatgpt("tell me a joke")
