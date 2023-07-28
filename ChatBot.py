@@ -80,7 +80,7 @@ def add_dist_score_column(
 ) -> pd.DataFrame:
     
     dataframe["stsopenai"] = dataframe["questions"].apply(
-            lambda x: calculate_cosine_similarity(x, sentence)
+            lambda x: calculate_sts_openai_score(x, sentence)
     )
 
     sorted_dataframe = dataframe.sort_values(by="stsopenai", ascending=False)
