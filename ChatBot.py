@@ -87,7 +87,7 @@ def add_dist_score_column(
 
     return sorted_dataframe.iloc[:5, :]
 
-de = pd.read_csv("mckinsey-covid-report.csv")
+df = pd.read_csv("mckinsey-covid-report.csv")
 
 question = st.text_input('Enter a question here', '')
 df_screened_by_dist_score = add_dist_score_column(
