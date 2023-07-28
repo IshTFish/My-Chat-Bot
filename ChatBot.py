@@ -2,6 +2,7 @@ import numpy as np
 import streamlit as st
 import openai
 import pandas as pd
+from scipy.spatial.distance import cosine
 
 from langchain.agents import load_tools
 from langchain.agents import initialize_agent
