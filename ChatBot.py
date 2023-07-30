@@ -101,6 +101,6 @@ engineered_prompt = f"""
     answer the user question {question}
 """
 response = call_chatgpt(engineered_prompt)
-st.write("Context:" + ref_from_internet)         # Delete me after testing
-st.write("More context: " + ref_from_covid_data) # Delete me after testing
-st.write("Response" + response)
+st.write("Context: " + ref_from_internet)         # Delete me after testing
+st.write("More context (test): " + ref_from_covid_data) # Delete me after testing
+st.write("Response: " + response)
