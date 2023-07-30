@@ -101,4 +101,5 @@ engineered_prompt = f"""
     answer the user question {question}
 """
 response = call_chatgpt(engineered_prompt)
+st.write(ref_from_internet) # Delete me after testing
 st.write(response)
