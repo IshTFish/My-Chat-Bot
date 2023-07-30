@@ -26,6 +26,7 @@ def call_chatgpt(prompt: str) -> str:
     """
 
     # Use the OpenAI API to generate a response based on the input prompt.
+    # What is the difference between this invocation (openai.Completion.create) and the function below (initialize_agent(...).run)?
     response = openai.Completion.create(
         model="text-davinci-003",
         prompt=prompt,
@@ -92,15 +93,15 @@ df = pd.read_csv("mckinsey-covid-report.csv")            # Read the CSV
 question = st.text_input('Enter a question here', '')    # Get the question from the user
 df_screened_by_dist_score = add_dist_score_column(
     df, question
-)                                                        # Compute the distance score between the question and each item in the CVS
-ref_from_internet = call_langchain(question)             # Appears to get the default answer to the question from ChatGPT
-ref_from_covid_data = df_screened_by_dist_score.answers  # Not exactly sure what this does
+)                                                        # Compute the distance score between the question and each item in the CVS?
+ref_from_internet = call_langchain(question)             # Appears to get the default answer to the question from ChatGPT?
+ref_from_covid_data = df_screened_by_dist_score.answers  # Not exactly sure what this does?
 engineered_prompt = f"""
     Basedon the context: {ref_from_internet},
     and based on more context: {ref_from_covid_data}
     answer the user question {question}
 """                                                      # Create an engineered prompt
 response = call_chatgpt(engineered_prompt)
-st.write("Context: " + ref_from_internet)                # Delete me after testing
+st.write("call_langchain(question): " + ref_from_internet) # Delete me after testing
 st.write("More context (test): " + ref_from_covid_data)  # Delete me after testing
 st.write("Response: " + response)
