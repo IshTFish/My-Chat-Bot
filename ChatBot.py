@@ -99,12 +99,6 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
-# Create a dictionary with the current question and answer
-assistant_prompt = {
-    "role": "assistant",
-    "content": "You are a helpful AI assistant for the user.",
-}
-
 # Get user input from chat_input and store it in the prompt variable using the walrus operator ":="
 if prompt := st.chat_input("What is up?"):
     # Add user message to session state messages
@@ -123,7 +117,7 @@ if prompt := st.chat_input("What is up?"):
         and based on more context: {ref_from_covid_data}
         answer the user prompt {prompt}
     """                                                      # Create an engineered prompt
-    response = call_chatgpt(engineered_prompt)
+    response = call_chatgpt(engineered_prompt)               # Can be changed depending on model
 
 
     # Display assistant response in chat message container
